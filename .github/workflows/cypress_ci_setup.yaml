@@ -9,7 +9,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    cypress-run:
+    cypress-run-ubuntu-latest:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
@@ -20,4 +20,16 @@ jobs:
               with:
                 command: npx cypress run
                 browser: chrome
-            
+    
+    cypress-run-windows-latest:
+        runs-on: windows-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Run Cypress tests
+              uses: cypress-io/github-action@v4
+              with:
+                command: npx cypress run
+                browser: chrome
+                
