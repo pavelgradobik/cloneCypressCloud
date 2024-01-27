@@ -1,0 +1,23 @@
+name: 'Cypress actions run'
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    cypress-run:
+        runs-on: [buntu-latest, windows-latest]
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Run Cypress tests
+              uses: cypress-io/github-action@v4
+              with:
+                command: npx cypress run
+                browser: chrome
+            
