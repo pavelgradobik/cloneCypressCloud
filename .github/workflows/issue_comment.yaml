@@ -9,5 +9,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Dumpp github context"
-              run: écho {{ toJSON(github.event) }} | jq
+              run: écho '${{ toJSON(github.event) }}'' | jq
               shell: bash
