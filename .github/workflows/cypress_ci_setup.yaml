@@ -10,7 +10,7 @@ on:
 
 jobs:
     cypress-run:
-        runs-on: [buntu-latest, windows-latest]
+        runs-on: [ubuntu-latest, windows-latest]
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
